@@ -3,7 +3,7 @@
  * Plugin Name: Real Estate Manager Importer for WP All Import
  * Description: Import existing property listings into Real Estate Manager using WP All Import.
  * Plugin URI: https://webcodingplace.com/real-estate-manager-wordpress-plugin/
- * Version: 1.4
+ * Version: 1.5
  * Author: WebCodingPlace
  * Author URI: https://webcodingplace.com/
  * License: GPLv2 or later
@@ -26,6 +26,9 @@ foreach ($all_fields as $field) {
 		} else {
 			$rem_addon->add_field('rem_'.$field['key'], $field['title'], 'text', null, $field['help']);
 		}
+	}
+	if ($field['key'] == 'file_attachments') {
+		$rem_addon->import_images( 'rem_set_property_attachments', 'Property Attachments', 'files' );
 	}
 }
 
@@ -76,6 +79,16 @@ function rem_set_property_images( $post_id, $att_id, $filepath, $is_keep_existin
      if (!in_array($att_id, $gallery)) {
          $gallery[] = $att_id;
          update_post_meta($post_id, $key, $gallery);
+     }
+}
+
+function rem_set_property_attachments( $post_id, $att_id, $filepath, $is_keep_existing_images ) {
+     $key = 'rem_file_attachments';
+     $attachments = get_post_meta($post_id, $key, TRUE);
+     if (strpos($attachments, $att_id) == false) {
+         $attachments .= $att_id;
+         $attachments .= "\n";
+         update_post_meta($post_id, $key, $attachments);
      }
 }
 

@@ -8,6 +8,10 @@
 </ul>
 <h2 id="item-description__changelog">Changelog</h2>
 
+= 1.5 - 4th February 2020 =
+
+* Feature Added: Import property attachments
+
 = 1.4 =
 
 * Feature Added: now Property Features can also be set when importing. 
