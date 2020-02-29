@@ -3,7 +3,7 @@
  * Plugin Name: Real Estate Manager Importer for WP All Import
  * Description: Import existing property listings into Real Estate Manager using WP All Import.
  * Plugin URI: https://webcodingplace.com/real-estate-manager-wordpress-plugin/
- * Version: 1.5
+ * Version: 1.6
  * Author: WebCodingPlace
  * Author URI: https://webcodingplace.com/
  * License: GPLv2 or later
@@ -79,6 +79,9 @@ function rem_set_property_images( $post_id, $att_id, $filepath, $is_keep_existin
      if (!in_array($att_id, $gallery)) {
          $gallery[] = $att_id;
          update_post_meta($post_id, $key, $gallery);
+     }
+     if (!has_post_thumbnail( $post_id ) && $att_id) {
+     	set_post_thumbnail( $post_id, $att_id );
      }
 }
 

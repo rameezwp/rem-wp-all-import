@@ -8,6 +8,10 @@
 </ul>
 <h2 id="item-description__changelog">Changelog</h2>
 
+= 1.6 - 29 February 2020 =
+
+* Feature Added: First gallery image is set to Featured Image
+
 = 1.5 - 4th February 2020 =
 
 * Feature Added: Import property attachments
