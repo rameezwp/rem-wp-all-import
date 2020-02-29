@@ -43,7 +43,7 @@ if (1) {
 	$rem_addon->run();
 } else {
 	$rem_addon->admin_notice(
-		'The Real Estate Manager Importer Add-On requires WP All Import <a href="http://wordpress.org/plugins/wp-all-import" target="_blank">Free</a> and the <a href="https://wordpress.org/plugins/real-estate-manager/">Real Estate Manager</a> plugin.'
+		'The Real Estate Manager Importer Add-On requires WP All Import <a href="http://wordpress.org/plugins/wp-all-import" target="_blank">Free</a> and the <a href="https://1.envato.market/01W74">Real Estate Manager</a> plugin.'
 	);
 }
 
